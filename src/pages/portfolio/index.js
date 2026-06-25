@@ -2,7 +2,32 @@ import React from "react";
 import "./style.css";
 import { Helmet, HelmetProvider } from "react-helmet-async";
 import { Container, Row, Col } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import { dataportfolio, meta } from "../../content_option";
+
+const ProjectLink = ({ project }) => {
+  const label = project.linkLabel || "Ver projeto";
+  const isInternal = project.link.startsWith("/");
+
+  if (isInternal) {
+    return (
+      <Link to={project.link} className="portfolio-card__link">
+        {label}
+      </Link>
+    );
+  }
+
+  return (
+    <a
+      href={project.link}
+      target="_blank"
+      rel="noreferrer"
+      className="portfolio-card__link"
+    >
+      {label}
+    </a>
+  );
+};
 
 export const Portfolio = () => {
   return (
@@ -22,11 +47,12 @@ export const Portfolio = () => {
         <div className="mb-5 po_items_ho">
           {dataportfolio.map((data, i) => {
             return (
-              <div key={i} className="po_item">
-                <img src={data.img} alt="" />
+              <div key={data.slug || i} className="po_item">
+                <img src={data.img} alt={data.title || data.description} />
                 <div className="content">
+                  {data.title && <h3 className="portfolio-card__title">{data.title}</h3>}
                   <p>{data.description}</p>
-                  <a href={data.link}>view project</a>
+                  <ProjectLink project={data} />
                 </div>
               </div>
             );

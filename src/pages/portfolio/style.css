@@ -67,14 +67,23 @@
     color: var(--secondary-color);
 }
 
-.po_item .content a {
+.po_item .content a,
+.po_item .content .portfolio-card__link {
     background: var(--bg-color);
     border: solid 1px var(--text-color);
     padding: 4px 8px;
     text-align: center;
     font-size: 1rem;
+    color: inherit;
+    text-decoration: none;
 }
 
-.po_item .content a:hover {
+.po_item .content .portfolio-card__title {
+    font-size: 1.25rem;
+    margin-bottom: 0.75rem;
+}
+
+.po_item .content a:hover,
+.po_item .content .portfolio-card__link:hover {
     text-decoration: none;
 }
