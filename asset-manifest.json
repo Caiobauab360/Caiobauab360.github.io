@@ -1,0 +1,18 @@
+{
+  "files": {
+    "main.css": "/static/css/main.711d2181.css",
+    "main.js": "/static/js/main.a99c7583.js",
+    "static/media/eu_1.jpg.JPG": "/static/media/eu_1.jpg.9c8887f0f1dff44d2e1a.JPG",
+    "static/media/hotel_dashboard.png": "/static/media/hotel_dashboard.856fbbecd4504762f1a2.png",
+    "static/media/performance_dashboard.png": "/static/media/performance_dashboard.0ae0586bd7f31e027ec4.png",
+    "static/media/tomas_bike.png.png": "/static/media/tomas_bike.png.2664b078f8b2220eaaa7.png",
+    "static/media/project_overview_dashboard.png": "/static/media/project_overview_dashboard.faca05b931dbbecc5991.png",
+    "static/media/cricket_dashboard.png": "/static/media/cricket_dashboard.ce71d26902a91e8e44e9.png",
+    "static/media/health_dashboard.png.png": "/static/media/health_dashboard.png.02efb6f58ee131e1e228.png",
+    "index.html": "/index.html"
+  },
+  "entrypoints": [
+    "static/css/main.711d2181.css",
+    "static/js/main.a99c7583.js"
+  ]
+}
