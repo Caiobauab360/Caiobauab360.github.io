@@ -85,6 +85,32 @@ export const ProjectDetail = () => {
           </Col>
         </Row>
 
+        {project.keyResults && (
+          <Row className="sec_sp">
+            <Col lg="5">
+              <h3 className="color_sec py-4">Resultados Chave</h3>
+            </Col>
+            <Col lg="7">
+              <ul className="project-detail__list">
+                {project.keyResults.map((result) => (
+                  <li key={result}>{result}</li>
+                ))}
+              </ul>
+            </Col>
+          </Row>
+        )}
+
+        {project.conclusion && (
+          <Row className="sec_sp mb-5">
+            <Col lg="5">
+              <h3 className="color_sec py-4">Conclusão</h3>
+            </Col>
+            <Col lg="7">
+              <p>{project.conclusion}</p>
+            </Col>
+          </Row>
+        )}
+
         {project.recommendation && (
           <Row className="sec_sp mb-5">
             <Col lg="5">

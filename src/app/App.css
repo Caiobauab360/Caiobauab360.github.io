@@ -39,4 +39,21 @@
     .container-xxl {
         max-width: 1140px;
     }
+/* Find any rule that contains filter: grayscale(...) on the
+   hero/home image and remove or override it like this: */
+ 
+.home_img img,
+.intro_image img,
+.about_img img {
+  filter: none !important;
+  -webkit-filter: none !important;
+}
+ 
+/* If the template uses a background-image approach instead,
+   target the wrapping div: */
+.home_img,
+.intro_image {
+  filter: none !important;
+  -webkit-filter: none !important;
+}
 }

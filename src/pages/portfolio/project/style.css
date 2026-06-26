@@ -65,3 +65,9 @@
     text-decoration: none;
     opacity: 0.85;
 }
+
+.project-detail p,
+.project-detail__list li {
+    overflow-wrap: break-word;
+    word-break: break-word;
+}
