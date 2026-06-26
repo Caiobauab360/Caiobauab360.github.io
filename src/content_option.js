@@ -87,15 +87,15 @@ export const skills = [
 export const services = [
   {
     title: "Desenvolvimento de Dashboards",
-    description: "Criação de dashboards interativos e intuitivos em Power BI e Tableau para monitoramento de KPIs e suporte à decisão.",
+    description: "Criação de dashboards interativos e intuitivos em Power BI para monitoramento de KPIs e suporte à decisão.",
   },
   {
     title: "Análise e Modelagem de Dados",
-    description: "Extração, tratamento (ETL) e modelagem de dados com SQL e Python para gerar insights e responder perguntas de negócio.",
+    description: "Extração, tratamento (ETL) e modelagem de dados com SQL e Python para gerar insights e responder a perguntas de negócio.",
   },
   {
     title: "Automação de Relatórios",
-    description: "Desenvolvimento de rotinas de automação para relatórios, otimizando o tempo e a precisão da informação.",
+    description: "Desenvolvimento de rotinas de automação para relatórios, otimizando o tempo e a precisão das informações.",
   },
 ];
 
@@ -192,7 +192,7 @@ export const dataportfolio = [
   },
   {
     slug: "hotel-dashboard",
-    title: "Hotel Dashboard",
+    title: "Análise de Reservas de Hotel",
     img: hotel_dashboard,
     description: "Análise e visualização de dados de reservas de hotel para identificar tendências e auxiliar na tomada de decisões.",
     link: "/portfolio/hotel-dashboard",
@@ -217,7 +217,7 @@ export const dataportfolio = [
   },
   {
     slug: "health-data-dashboard",
-    title: "From Data to Health Dashboard",
+    title: "Dashboard de Análise de Saúde",
     img: health_dashboard,
     description: "Projeto de HR Analytics para um programa de bônus e análise de absenteísmo.",
     link: "/portfolio/health-data-dashboard",
@@ -247,7 +247,7 @@ export const dataportfolio = [
   },
   {
     slug: "tomas-bike-dashboard",
-    title: "Tomas Bike Share Dashboard",
+    title: "Análise de Compartilhamento de Bicicletas",
     img: tomas_bike,
     description: "Análise de métricas de performance para uma empresa de compartilhamento de bicicletas.",
     link: "/portfolio/tomas-bike-dashboard",

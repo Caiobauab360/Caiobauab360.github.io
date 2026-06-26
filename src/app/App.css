@@ -1,59 +1,9 @@
-@media only screen and (max-width: 991px) {
-    .s_c {
-        padding-top: 40px;
-    }
-}
-
-.page-enter {
-    transform: translateY(100%);
-}
-
-.page-enter-active {
-    transform: translateY(0%);
-    transition: all 400ms ease-out;
-}
-
-.page-exit {
-    transform: translateY(0%);
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 0;
-}
-
-.page-exit-active {
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 0;
-    transform: translateY(-130%);
-    transition: all 400ms ease-out;
-}
-
-@media (min-width: 1400px) {
-    .container,
-    .container-lg,
-    .container-md,
-    .container-sm,
-    .container-xl,
-    .container-xxl {
-        max-width: 1140px;
-    }
-/* Find any rule that contains filter: grayscale(...) on the
-   hero/home image and remove or override it like this: */
- 
-.home_img img,
-.intro_image img,
-.about_img img {
-  filter: none !important;
+.h_bg-image {
   -webkit-filter: none !important;
-}
- 
-/* If the template uses a background-image approach instead,
-   target the wrapping div: */
-.home_img,
-.intro_image {
   filter: none !important;
-  -webkit-filter: none !important;
 }
+
+.po_item img {
+  object-fit: cover;
+  height: 100%;
 }
