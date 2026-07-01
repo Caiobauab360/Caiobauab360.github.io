@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.6bc19ad0.css",
-    "main.js": "/static/js/main.6fd51f7a.js",
+    "main.js": "/static/js/main.423ef992.js",
     "static/media/eu_1.jpg.JPG": "/static/media/eu_1.jpg.9c8887f0f1dff44d2e1a.JPG",
     "static/media/hotel_dashboard.png": "/static/media/hotel_dashboard.856fbbecd4504762f1a2.png",
     "static/media/performance_dashboard.png": "/static/media/performance_dashboard.0ae0586bd7f31e027ec4.png",
@@ -13,6 +13,6 @@
   },
   "entrypoints": [
     "static/css/main.6bc19ad0.css",
-    "static/js/main.6fd51f7a.js"
+    "static/js/main.423ef992.js"
   ]
 }
