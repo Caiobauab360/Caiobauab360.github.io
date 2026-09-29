@@ -5,7 +5,9 @@ import { Container, Row, Col } from "react-bootstrap";
 import {
   dataabout,
   meta,
-  worktimeline,
+  workExperiences,
+  educationTimeline,
+  skillCategories,
   skills,
   services,
 } from "../../content_option";
@@ -35,24 +37,61 @@ export const About = () => {
             </div>
           </Col>
         </Row>
-        <Row className=" sec_sp">
+        <Row className="sec_sp">
           <Col lg="5">
             <h3 className="color_sec py-4">Trajetória Profissional</h3>
           </Col>
           <Col lg="7">
-            <table className="table caption-top">
-              <tbody>
-                {worktimeline.map((data, i) => {
-                  return (
-                    <tr key={i}>
-                      <th scope="row">{data.jobtitle}</th>
-                      <td>{data.where}</td>
-                      <td>{data.date}</td>
-                    </tr>
-                  );
-                })}
-              </tbody>
-            </table>
+            {/* 1. EXPERIÊNCIA PROFISSIONAL */}
+            <div className="timeline_category mb-5">
+              <h4 className="timeline_category_title mb-4">
+                Experiência Profissional
+              </h4>
+              <div className="timeline_items">
+                {workExperiences.map((exp, i) => (
+                  <div key={i} className="timeline_item">
+                    <div className="d-flex flex-wrap justify-content-between align-items-baseline gap-2 mb-2">
+                      <div className="timeline_header">
+                        <strong className="timeline_role">{exp.role}</strong>
+                        <span className="timeline_separator"> | </span>
+                        <strong className="timeline_company">{exp.company}</strong>
+                      </div>
+                      <span className="timeline_date">{exp.date}</span>
+                    </div>
+                    {exp.descriptions && exp.descriptions.length > 0 && (
+                      <ul className="timeline_desc_list">
+                        {exp.descriptions.map((desc, j) => (
+                          <li key={j} className="timeline_desc_item">
+                            {desc}
+                          </li>
+                        ))}
+                      </ul>
+                    )}
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* 2. FORMAÇÃO ACADÊMICA & INTERCÂMBIO */}
+            <div className="timeline_category">
+              <h4 className="timeline_category_title mb-4">
+                Formação Acadêmica & Intercâmbio
+              </h4>
+              <div className="timeline_items">
+                {educationTimeline.map((edu, i) => (
+                  <div key={i} className="timeline_item">
+                    <div className="d-flex flex-wrap justify-content-between align-items-baseline gap-2">
+                      <div className="timeline_header">
+                        <strong className="timeline_role">{edu.title}</strong>
+                        <span className="timeline_separator"> | </span>
+                        <strong className="timeline_company">{edu.institution}</strong>
+                      </div>
+                      <span className="timeline_date">{edu.date}</span>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
           </Col>
         </Row>
         <Row className="sec_sp">
@@ -60,23 +99,20 @@ export const About = () => {
             <h3 className="color_sec py-4">Habilidades</h3>
           </Col>
           <Col lg="7">
-            {skills.map((data, i) => {
-              return (
-                <div key={i}>
-                  <h3 className="progress-title">{data.name}</h3>
-                  <div className="progress">
-                    <div
-                      className="progress-bar"
-                      style={{
-                        width: `${data.value}%`,
-                      }}
-                    >
-                      <div className="progress-value">{data.value}%</div>
-                    </div>
-                  </div>
+            <div className="skills_grid">
+              {skillCategories.map((cat, i) => (
+                <div key={i} className="skill_card">
+                  <h4 className="skill_card_title">{cat.title}</h4>
+                  <ul className="skill_card_list">
+                    {cat.skills.map((skill, j) => (
+                      <li key={j} className="skill_card_item">
+                        {skill}
+                      </li>
+                    ))}
+                  </ul>
                 </div>
-              );
-            })}
+              ))}
+            </div>
           </Col>
         </Row>
         <Row className="sec_sp">

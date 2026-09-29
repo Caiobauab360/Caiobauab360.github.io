@@ -61,7 +61,9 @@ export const ProjectDetail = () => {
 
         <Row className="sec_sp">
           <Col lg="5">
-            <h3 className="color_sec py-4">Fluxo do projeto</h3>
+            <h3 className="color_sec py-4">
+              {project.workflowTitle || "Fluxo do projeto"}
+            </h3>
           </Col>
           <Col lg="7">
             <ol className="project-detail__list">
@@ -74,7 +76,9 @@ export const ProjectDetail = () => {
 
         <Row className="sec_sp">
           <Col lg="5">
-            <h3 className="color_sec py-4">Requisitos atendidos</h3>
+            <h3 className="color_sec py-4">
+              {project.requirementsTitle || "Requisitos atendidos"}
+            </h3>
           </Col>
           <Col lg="7">
             <ul className="project-detail__list">
@@ -88,7 +92,9 @@ export const ProjectDetail = () => {
         {project.keyResults && (
           <Row className="sec_sp">
             <Col lg="5">
-              <h3 className="color_sec py-4">Resultados Chave</h3>
+              <h3 className="color_sec py-4">
+                {project.keyResultsTitle || "Resultados Chave"}
+              </h3>
             </Col>
             <Col lg="7">
               <ul className="project-detail__list">
@@ -122,7 +128,7 @@ export const ProjectDetail = () => {
           </Row>
         )}
 
-        <Row className="mb-5">
+        <Row className="mb-5 pb-4">
           <Col lg="12">
             <a
               href={project.powerbiEmbedUrl}

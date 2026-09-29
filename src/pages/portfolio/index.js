@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 import { dataportfolio, meta } from "../../content_option";
 
 const ProjectLink = ({ project }) => {
-  const label = project.linkLabel || "Ver projeto";
+  const label = "Ver detalhes";
   const isInternal = project.link.startsWith("/");
 
   if (isInternal) {
@@ -29,15 +29,40 @@ const ProjectLink = ({ project }) => {
   );
 };
 
-export const Portfolio = () => {
+const ProjectTitle = ({ project }) => {
+  const isInternal = project.link.startsWith("/");
+
+  if (isInternal) {
+    return (
+      <Link to={project.link} className="portfolio-card__title-link">
+        {project.title}
+      </Link>
+    );
+  }
+
+  return (
+    <a
+      href={project.link}
+      target="_blank"
+      rel="noreferrer"
+      className="portfolio-card__title-link"
+    >
+      {project.title}
+    </a>
+  );
+};
+
+export const Portfolio = ({ isEmbedded = false }) => {
   return (
     <HelmetProvider>
       <Container className="About-header">
-        <Helmet>
-          <meta charSet="utf-8" />
-          <title> Portfolio | {meta.title} </title>{" "}
-          <meta name="description" content={meta.description} />
-        </Helmet>
+        {!isEmbedded && (
+          <Helmet>
+            <meta charSet="utf-8" />
+            <title> Portfolio | {meta.title} </title>{" "}
+            <meta name="description" content={meta.description} />
+          </Helmet>
+        )}
         <Row className="mb-5 mt-3 pt-md-3">
           <Col lg="8">
             <h1 className="display-4 mb-4"> Portfolio BI </h1>{" "}
@@ -48,29 +73,29 @@ export const Portfolio = () => {
           {dataportfolio.map((data, i) => {
             return (
               <div key={data.slug || i} className="po_item">
-                <div
-                  className="po_item_img-wrap"
-                  style={{
-                    width: "100%",
-                    aspectRatio: "1 / 1",
-                    overflow: "hidden",
-                  }}
-                >
+                <div className="po_item_img-wrap">
                   <img
                     src={data.img}
                     alt={data.title || data.description}
-                    style={{
-                      width: "100%",
-                      height: "100%",
-                      objectFit: "cover",
-                      display: "block",
-                    }}
+                    className="po_item_img"
                   />
+                  <div className="po_item_overlay">
+                    <ProjectLink project={data} />
+                  </div>
                 </div>
-                <div className="content">
-                  {data.title && <h3 className="portfolio-card__title">{data.title}</h3>}
-                  <p>{data.description}</p>
-                  <ProjectLink project={data} />
+                <div className="po_item_info">
+                  <h3 className="portfolio-card__title">
+                    <ProjectTitle project={data} />
+                  </h3>
+                  {data.tools && data.tools.length > 0 && (
+                    <div className="portfolio-card__tools">
+                      {data.tools.map((tool, idx) => (
+                        <span key={idx} className="portfolio-card__badge">
+                          {tool}
+                        </span>
+                      ))}
+                    </div>
+                  )}
                 </div>
               </div>
             );

@@ -18,6 +18,10 @@
     --overlay-color: rgb(255 255 255 / 70%);
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 html,
 body {
     height: 100%;

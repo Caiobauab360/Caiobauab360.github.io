@@ -1,0 +1,46 @@
+.lang_toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  cursor: pointer;
+  user-select: none;
+  font-family: Marcellus, sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 0 10px;
+}
+
+.lang_btn {
+  background: none;
+  border: none;
+  padding: 2px 4px;
+  color: var(--text-color-2);
+  opacity: 0.5;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  cursor: pointer;
+  transition: opacity 0.25s ease, color 0.25s ease, transform 0.2s ease;
+  line-height: 1;
+}
+
+.lang_btn:hover {
+  opacity: 0.85;
+  transform: translateY(-1px);
+}
+
+.lang_btn--active {
+  opacity: 1;
+  color: var(--text-color);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  font-weight: 700;
+}
+
+.lang_divider {
+  opacity: 0.35;
+  font-size: 0.8rem;
+  margin: 0 2px;
+  color: var(--text-color-2);
+}
