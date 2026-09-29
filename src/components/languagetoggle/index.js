@@ -1,39 +1,29 @@
 import React, { useEffect, useState } from "react";
 import "./style.css";
-import { translatePage } from "../../i18n";
+import { initGoogleTranslate, setLanguage } from "../../i18n";
 
 const LanguageToggle = () => {
   const [lang, setLang] = useState(
     localStorage.getItem("portfolio_lang") || "pt"
   );
 
+  useEffect(() => {
+    initGoogleTranslate();
+    const savedLang = localStorage.getItem("portfolio_lang") || "pt";
+    if (savedLang === "en") {
+      setLanguage("en");
+    }
+  }, []);
+
   const handleLangChange = (newLang) => {
     if (newLang !== lang) {
       setLang(newLang);
+      setLanguage(newLang);
     }
   };
 
-  useEffect(() => {
-    localStorage.setItem("portfolio_lang", lang);
-    translatePage(lang);
-
-    // Watch for route changes and dynamic DOM updates
-    const observer = new MutationObserver(() => {
-      if (lang === "en") {
-        translatePage("en");
-      }
-    });
-
-    observer.observe(document.getElementById("root") || document.body, {
-      childList: true,
-      subtree: true,
-    });
-
-    return () => observer.disconnect();
-  }, [lang]);
-
   return (
-    <div className="lang_toggle nav_ac">
+    <div className="lang_toggle nav_ac notranslate" translate="no">
       <button
         type="button"
         className={`lang_btn ${lang === "pt" ? "lang_btn--active" : ""}`}
