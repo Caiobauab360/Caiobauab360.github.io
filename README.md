@@ -45,5 +45,5 @@ Além das análises de dados apresentadas, o próprio desenvolvimento e a evolu�
 Sinta-se à vontade para conectar e discutir colaborações, projetos freelance ou oportunidades de carreira!
 
 * **E-mail:** [caio_bauab@hotmail.com](mailto:caio_bauab@hotmail.com)
-* **LinkedIn:** [caio-bauab](https://www.linkedin.com/in/caio-bauab/)
-* **GitHub:** [CaioBauab](https://github.com/CaioBauab)
+* **LinkedIn:** [caio-bauab](https://www.linkedin.com/in/caio-bauab-032189206/)
+* **GitHub:** [CaioBauab](https://github.com/Caiobauab360)
